@@ -9,7 +9,7 @@
   --darkBlue: #00214d;
   --grey: #bfbfbf;
   --lightGrey: #f2f4f6;
-  --white: #fff000;
+  --white: #ffffff;
   --pink: pink;
 
   /* Define colours intentions */
@@ -17,7 +17,7 @@
   --danger: var(--red);
   --background: var(--lightGrey);
   --textColour: var(--black);
-  --lineColor: var(--grey);
+  --lineColor: var(--green);
   /*--cancelButton: var(--white);*/
 
   /* Styles */
@@ -26,6 +26,7 @@
   /* Type */
   --headingFont: "Nunito", sans-serif;
   --bodyFont: "Nunito", sans-serif;
+  --baseFontSize: 100%;
   --h1: 3.052em;
   --h2: 2.441em;
   --h3: 1.953em;
@@ -46,22 +47,26 @@
   --med: 400px;
 }
 
-@media only screen and (min-width: var(--med)) {
-  body {
-    background: red !important;
-  }
-}
-
 /* FROM TYPE-SCALE.COM */
 
 html {
-  font-size: 112.5%;
+  font-size: var(--baseFontSize);
 } /*18px*/
 
 body {
   font-family: var(--bodyFont);
   font-weight: 400;
-  line-height: 1.75;
+  padding-bottom: 300px;
+  background: var(--background);
+  color: var(--textColour);
+}
+
+header {
+  --headerBackground: var(--darkBlue);
+  color: white;
+  height: 3rem;
+  background: var(--headerBackground);
+  box-shadow: var(--level-2);
 }
 
 p {
@@ -72,7 +77,7 @@ p {
 p a blockquote {
   color: var(--darkBlue);
   text-decoration: none;
-  border-bottom: solid 3px var(--green);
+  border-bottom: solid 3px var(--red);
 }
 
 h1,
@@ -113,12 +118,6 @@ small,
 }
 /*  END TYPESCALE */
 
-body {
-  background: var(--background);
-  color: var(--textColour);
-  padding-bottom: 300px;
-}
-
 .dark {
   --background: var(--black);
   --textColour: var(--lightGrey);
@@ -129,7 +128,9 @@ blockquote {
   margin: 10px;
   padding: 2em;
   background-color: var(--white);
-  box-shadow: var(--level-2);
+  box-shadow: var(--level-4);
+  border-radius: 30%;
+  max-width: 50em;
 }
 
 /*blockquote a {
@@ -145,9 +146,9 @@ label {
 
 input,
 textarea {
-  padding: 5px 5px;
+  padding: 10px 10px;
   border: var(--line);
-  border-radius: 5px;
+  border-radius: 8px;
 }
 
 textarea {
@@ -174,8 +175,8 @@ button {
   color: var(--textColour);
   background-color: var(--buttonColour);
   border: none;
-  border-radius: 10px;
-  padding: 5px 35px;
+  border-radius: 8px;
+  padding: 5px 30px;
   box-shadow: var(--level-1);
   transition: 0.3s ease-in-out box-shadow;
 }
@@ -206,22 +207,47 @@ button.small {
 /* Generic Grid creates 2 equal columns */
 .grid {
   --gridCols: 2;
-  display: grid;
+  display: block;
   grid-template-columns: repeat(var(--gridCols), 1fr);
 }
 
 .cols-3 {
   --gridCols: 3;
+  background-color: aqua;
+}
+.cols-4 {
+  --gridCols: 4;
+  background-color: var(--red);
 }
 
+/* Generic Flex */
 .flex {
   --justifyContent: space-between;
-  display: flex;
+  display: block;
   justify-content: var(--justifyContent);
 }
 
+/* Tweaked Flex */
 .flex-around {
   --justifyContent: space-around;
+}
+
+/* MEDIA QUERIES - at bottom because of specificity */
+@media only screen and (min-width: 600px) {
+  :root {
+    --baseFontSize: 112.5%;
+  }
+  .grid {
+    display: grid;
+  }
+  .flex {
+    display: flex;
+  }
+}
+
+.fake-logo {
+  font-size: var(--baseFontSize);
+  margin: 0;
 }
 
 /* SPECIFICITY */
@@ -266,20 +292,4 @@ h1 {
   --black: blue;
   color: var(--black);
 }
-
-
-
-
-
-
-
-
-
-
-
-/* Up to 800px */
-@media only screen and (max-width: 600px) {
-  :root {
-    --black: red;
-  }
-}
+*/
