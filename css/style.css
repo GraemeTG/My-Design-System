@@ -44,19 +44,28 @@
   --level-4: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
     0 10px 10px -5px rgba(0, 0, 0, 0.04);
 
-  --med: 400px;
+  /* Positioning */
+  /* 2.5% comes from making up 5% from the 95% on the .layout (x2 on each side) */
+  --containerPadding: 2.5%;
+  --headerHeight: 3rem;
 }
 
 /* FROM TYPE-SCALE.COM */
 
 html {
   font-size: var(--baseFontSize);
+  box-sizing: border-box;
 } /*18px*/
+
+*,
+*::before {
+  box-sizing: inherit;
+}
 
 body {
   font-family: var(--bodyFont);
   font-weight: 400;
-  padding-bottom: 300px;
+  /*padding-bottom: 300px;*/
   background: var(--background);
   color: var(--textColour);
 }
@@ -64,9 +73,34 @@ body {
 header {
   --headerBackground: var(--darkBlue);
   color: white;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
   height: 3rem;
   background: var(--headerBackground);
   box-shadow: var(--level-2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 var(--containerPadding);
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+  border-bottom: solid 1px var(--red);
+}
+
+header nav a + a {
+  margin: 10px;
+}
+
+footer {
+  color: white;
+  background: var(--black);
+  padding: 0 var(--containerPadding);
+  text-align: center;
 }
 
 p {
@@ -200,8 +234,10 @@ button.small {
 
 /* ELEMENTS AND LAYOUTS */
 .layout {
-  margin: 0 auto;
-  width: 95%;
+  /*margin: 0 auto;
+  width: 95%;*/
+  /* top padding header heightv + whatever visual padding we want */
+  padding: calc(3rem + var(--headerHeight)) var(--containerPadding);
 }
 
 /* Generic Grid creates 2 equal columns */
