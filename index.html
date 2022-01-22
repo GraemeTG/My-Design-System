@@ -23,7 +23,7 @@
   <meta name="theme-color" content="#fafafa" />
 </head>
 
-<body class="not-dark">
+<body class="dark oled">
 
   <header>
     <h1 class="fake-logo">Fake Logo</h1>
@@ -86,7 +86,49 @@
       <p>Column 4 in my grid</p>
     </div>
 
+    <hr>
+
+    <div class="card">
+      <h3>Card Heading</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.</p>
+      <button>Accept</button>
+    </div>
+
+    <hr>
+
+    <h5>.split</h5>
+    <div class="split">
+      <aside>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua.</p>
+      </aside>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+
+    <h5>.grid .grid--split</h5>
+    <div class="grid grid--split">
+      <aside>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua.</p>
+      </aside>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+
+    <hr>
+
     <!-- ADD A KITCHEN SINK FORM -->
+    <h3>Form</h3>
     <form action="#">
       <div class="flex flex-around">
         <!--<div class="flex flex-around"></div>-->
@@ -121,6 +163,8 @@
       </div>
       <!--<input type="submit" value="Submit">-->
 
+
+
       <button>Submit</button>
       <button class="cancel">Cancel</button>
       <button disabled>Disabled</button>
@@ -131,6 +175,11 @@
 
     </form>
     <!-- END OF KITCHEN SINK FORM -->
+
+    <hr>
+
+
+
   </main>
 
   <footer>
@@ -140,6 +189,7 @@
       <a href="#">About</a>
       <a href="#">Contact</a>
     </nav>
+    <p>&copy; 2022 Graeme TG</p>
   </footer>
 
   <script src="js/vendor/modernizr-3.11.2.min.js"></script>
